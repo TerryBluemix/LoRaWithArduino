@@ -17,14 +17,9 @@ void setup() {
 }
  
 void loop() {
- // LoRa.print("AT+DTX=11,\"25.04,121.5\"\r");
-  //delay(500);
-  // 若收到「序列埠監控視窗」的資料，則送到LoRa模組
-  if (Serial.available()) {
-    val = Serial.read();
-    LoRa.print(val);
-    //LoRa.print("AT+DTX=3,\"123\"");
-  }
+ //送出測試資料 lat: 25.045361, long:121.522544, batteryLevel:200, temp: 30, state: 10(00001010)
+  LoRa.print("AT+DTX=22,073E4970017E2971C81E0A\r");
+  delay(500);
  
   // 若收到藍牙模組的資料，則送到「序列埠監控視窗」
   ;
